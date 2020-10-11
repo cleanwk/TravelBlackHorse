@@ -11,6 +11,7 @@ drop table if exists tab_category;
 drop table if exists tab_seller;
 drop table if exists tab_user;
 
+
 /*==============================================================*/
 /* Table: tab_category                                          */
 /*==============================================================*/
@@ -114,7 +115,7 @@ alter table tab_route add constraint FK_seller_route foreign key (sid)
 
 alter table tab_route_img add constraint FK_route_routeimg foreign key (rid)
       references tab_route (rid) on delete restrict on update restrict;
-	  
+
 	  
 insert  into `tab_category`(`cid`,`cname`) values (8,'全球自由行'),(5,'国内游'),(4,'处境游'),(7,'抱团定制'),(6,'港澳游'),(2,'酒店'),(1,'门票'),(3,'香港车票');
 insert  into `tab_seller`(`sid`,`sname`,`consphone`,`address`) values (1,'黑马程序员','12345678901','传智播客javaEE学院');

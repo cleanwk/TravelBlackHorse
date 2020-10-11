@@ -22,10 +22,27 @@ public class JDBCUtils {
 	// 1.	声明静态数据源成员变量
 	private static DataSource ds;
 
+//	static {
+//
+//		try {
+//			//加载配置文件
+//			Properties pro = new Properties();
+//			pro.load(JDBCUtils.class.getClassLoader().getResourceAsStream("druid.properties"));
+//			//获取DATASOURCE
+//			ds =  DruidDataSourceFactory.createDataSource(pro);
+//		} catch (IOException e) {
+//			System.out.println("DRUIL 异常");
+//			e.printStackTrace();
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			System.out.println("DRUIL 异常");
+//		}
+//	}
+
 	// 2. 创建连接池对象
 	static {
 		// 加载配置文件中的数据
-		InputStream is = JDBCUtils.class.getClassLoader().getResourceAsStream("/druid.properties");
+		InputStream is = JDBCUtils.class.getClassLoader().getResourceAsStream("druid.properties");
 		Properties pp = new Properties();
 		try {
 			pp.load(is);
