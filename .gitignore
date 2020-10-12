@@ -24,3 +24,4 @@ hs_err_pid*
 
 #配置文件
 *.properties
+*.xml

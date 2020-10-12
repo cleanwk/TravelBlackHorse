@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Random;
 
 /**
@@ -54,6 +55,7 @@ public class CheckCodeServlet extends HttpServlet {
 		//参数一：图片对象
 		//参数二：图片的格式，如PNG,JPG,GIF
 		//参数三：图片输出到哪里去
+		System.out.println("验证码输出了>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		ImageIO.write(image,"PNG",response.getOutputStream());
 	}
 	/**

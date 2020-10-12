@@ -27,7 +27,7 @@ public class RegisterUserServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String checkcode_server= (String)session.getAttribute("CHECKCODE_SERVER");
         session.removeAttribute("CHECKCODE_SERVER");
-
+        System.out.println("11111111111111");
         //比较
         if (checkcode_server == null|!checkcode_server.equalsIgnoreCase(check)){
             //验证码错误
@@ -40,9 +40,10 @@ public class RegisterUserServlet extends HttpServlet {
             //将json数据写回客户端
             response.setContentType("application/json;charset=utf-8");
             response.getWriter().write(json);
+            System.out.println("2222222222222222222");
             return;
         }
-
+        System.out.println("333333333333333333333");
 
         //获取数据
         Map<String, String[]> parameterMap = request.getParameterMap();
