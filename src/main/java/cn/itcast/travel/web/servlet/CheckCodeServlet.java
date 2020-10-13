@@ -15,7 +15,7 @@ import java.util.Random;
 /**
  * 验证码
  */
-@WebServlet("/checkCode")
+@WebServlet("/CheckCodeServlet")
 public class CheckCodeServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
 		

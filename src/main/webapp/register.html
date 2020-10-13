@@ -51,7 +51,10 @@
 				//获取用户名的值
 				var email = $("#email").val();
 				//定义正则表达式
-				var reg_email = /^\w+@\w+\.\w+$/;
+				//var reg_email = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+				//var reg_email = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+				var reg_email = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 				//判断并给出提示信息
 				var flag = reg_email.test(email);
 				if (flag){
@@ -177,16 +180,14 @@
     							</td>
     							<td class="td_right check">
     								<input type="text" id="check" name="check" class="check">
-    								<img class="check_img" src="checkCode" height="32px" alt="" onclick="changeCheckCode(this)">
+    								<img class="check_img" src="CheckCodeServlet" height="32px" alt="" onclick="changeCheckCode(this)">
 									<script type="text/javascript">
 										//图片点击事件
 
 										function changeCheckCode(img) {
-											alert("CLICK");
 
 											img.src="CheckCodeServlet?time="+new Date().getTime();
 
-											alert("click down");
 											/*	img.src="CheckCodeServlet?"+new Date().getTime();
 											img.src="CheckCodeServlet?";*/
                                         }

@@ -18,6 +18,27 @@
     <script src="js/angular.min.js"></script>
 	<!--导入jquery-->
 	<script src="js/jquery-3.3.1.js"></script>
+	<script>
+		$(function () {
+			//给按钮绑定单击事件
+			$("#but_sub").click(function () {
+				//发送ajax请求
+				$.post("LoginServlet",$("#loginForm").serialize(),function (data) {
+					//根据json数据进行判断
+					if (data.flag){
+						//登录成功
+						location.href = "index.html";
+					}else{
+						//登陆失败
+						$("#errorMsg").html(data.errorMsg);
+					}
+
+
+				});
+			});
+
+		});
+	</script>
 </head>
 
 <body>
@@ -52,7 +73,7 @@
 					</script>
 			</div>
 			<div class="submit_btn">
-        				<button type="button">登录</button>
+        				<button type="button" id = "but_sub">登录</button>
         				<div class="auto_login">
         					<input type="checkbox" name="" class="checkbox">
         					<span>自动登录</span>

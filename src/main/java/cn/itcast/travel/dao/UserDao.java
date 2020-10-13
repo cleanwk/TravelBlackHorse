@@ -29,4 +29,12 @@ public interface UserDao {
      * @param user
      */
     public void save(User user);
+
+    /**
+     * 根据用户名,密码查找数据库中是否有符合的的
+     * @param username
+     * @param password
+     * @return
+     */
+    User findByUsernameAndPassWord(String username,String password);
 }

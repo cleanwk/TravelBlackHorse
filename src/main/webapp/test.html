@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var reg_email = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        var flag = reg_email.test("13393856268@163.com");
+
+        var email = /^([\w-_]+(?:\.[\w-_]+)*)@((?:[a-z0-9]+(?:-[a-zA-Z0-9]+)*)+\.[a-z]{2,6})$/i;
+        var flag2=  email.test("13393856268@163.com");
+
+        alert(flag);
+        alert(flag2);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
