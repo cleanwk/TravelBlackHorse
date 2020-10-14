@@ -72,7 +72,7 @@
 				$("#registerForm").submit(function () {
 					if (checkUsername()&&checkPassword()&&checkEmail()){
 						//校验发送ajax请求，提交表单数据
-						$.post("RegisterUserServlet",$(this).serialize(),function (data){
+						$.post("user/registerUser",$(this).serialize(),function (data){
 								//处理服务器返回的数据
 
 							if(data.flag){
@@ -81,9 +81,9 @@
 							}else {
 								//注册失败
 								$("#errorMsg").html(data.errorMsg);
-								//document.getElementById("check_img").src= "CheckCodeServlet?"+new Date().getTime();
+								//document.getElementById("check_img").src= "user/checkCode?"+new Date().getTime();
 								alert("aaa");
-								$("#check_img").attr("src","CheckCodeServlet?"+new Date().getTime());
+								$("#check_img").attr("src","user/checkCode?"+new Date().getTime());
 								alert("bbb")
 							}
 						});
@@ -180,13 +180,13 @@
     							</td>
     							<td class="td_right check">
     								<input type="text" id="check" name="check" class="check">
-    								<img class="check_img" src="CheckCodeServlet" height="32px" alt="" onclick="changeCheckCode(this)">
+    								<img class="check_img" src="user/checkCode" height="32px" alt="" onclick="changeCheckCode(this)">
 									<script type="text/javascript">
 										//图片点击事件
 
 										function changeCheckCode(img) {
 
-											img.src="CheckCodeServlet?time="+new Date().getTime();
+											img.src="user/checkCode?time="+new Date().getTime();
 
 											/*	img.src="CheckCodeServlet?"+new Date().getTime();
 											img.src="CheckCodeServlet?";*/

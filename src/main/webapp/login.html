@@ -23,7 +23,7 @@
 			//给按钮绑定单击事件
 			$("#but_sub").click(function () {
 				//发送ajax请求
-				$.post("LoginServlet",$("#loginForm").serialize(),function (data) {
+				$.post("user/login",$("#loginForm").serialize(),function (data) {
 					//根据json数据进行判断
 					if (data.flag){
 						//登录成功
@@ -68,7 +68,7 @@
 					<script type="text/javascript">
 						//图片点击事件
 						function changeCheckCode(img) {
-							img.src="checkCode?"+new Date().getTime();
+							img.src="user/checkCode?"+new Date().getTime();
 						}
 					</script>
 			</div>
