@@ -12,12 +12,16 @@
 
             //遍历数组拼接字符串
             for (var i = 0; i < data.length; i++) {
-                var li = '<li><a href="route_list.html">'+data[i].cname+'</a></li>';
 
-                list +=li;
+
+                var li = '<li><a href="route_list.html?cid='+data[i].cid+'">'+data[i].cname+'</a></li>';
+
+                list+=li;
+
             }
 
             list += '<li><a href="favoriterank.html">收藏排行榜</a></li>';
+
             $("#category").html(list);
 
         })
